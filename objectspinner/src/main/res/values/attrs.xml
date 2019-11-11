@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="max_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ObjectSpinner">
+        <!-- Spinner Layout -->
+        <attr name="padding" format="reference|dimension" />
+        <attr name="padding_left" format="reference|dimension" />
+        <attr name="padding_top" format="reference|dimension" />
+        <attr name="padding_right" format="reference|dimension" />
+        <attr name="padding_bottom" format="reference|dimension" />
+
+        <attr name="text_size" format="reference|dimension" />
+        <attr name="text_color" format="reference|color" />
+        <attr name="background_color" format="reference|color" />
+
+        <attr name="hint" format="reference|string" />
+        <attr name="hint_color" format="reference|color" />
+
+        <attr name="arrow_color" format="reference|color" />
+        <attr name="shadow" format="reference|boolean" />
+
+        <!-- Spinner List Layout -->
+        <attr name="list_max_height" format="reference|dimension" />
+        <attr name="list_empty_text" format="reference|string" />
+
+        <!-- Spinner Item Layout -->
+        <attr name="item_padding" format="reference|dimension" />
+        <attr name="item_padding_left" format="reference|dimension" />
+        <attr name="item_padding_top" format="reference|dimension" />
+        <attr name="item_padding_right" format="reference|dimension" />
+        <attr name="item_padding_bottom" format="reference|dimension" />
+
+        <attr name="item_text_size" format="reference|dimension" />
+        <attr name="item_text_color" format="reference|color" />
+        <attr name="item_background_color" format="reference|color" />
+
+        <!-- Spinner Selected Item Layout -->
+        <attr name="selected_item_text_size" format="reference|dimension" />
+        <attr name="selected_item_text_color" format="reference|color" />
+        <attr name="selected_item_background_color" format="reference|color" />
+
+        <!-- Spinner Search Layout -->
+        <attr name="search_text_color" format="reference|color" />
+        <attr name="search_icon_color" format="reference|color" />
+        <attr name="search_background_color" format="reference|color" />
+
+        <!-- Feature -->
+        <attr name="searchable" format="reference|boolean" />
+    </declare-styleable>
+</resources>

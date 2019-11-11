@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <kr.ry4nkim.objectspinner.ObjectSpinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:arrow_color="#333"
+        app:background_color="#FFF"
+        app:hint="Select Item"
+        app:hint_color="#999"
+        app:item_background_color="#FFF"
+        app:item_padding_bottom="8dp"
+        app:item_padding_left="16dp"
+        app:item_padding_right="16dp"
+        app:item_padding_top="8dp"
+        app:item_text_color="#333"
+        app:item_text_size="16sp"
+        app:list_empty_text="No matches found"
+        app:list_max_height="300dp"
+        app:padding_bottom="8dp"
+        app:padding_left="16dp"
+        app:padding_right="16dp"
+        app:padding_top="8dp"
+        app:search_background_color="#F3F3F3"
+        app:search_icon_color="#C0C0C0"
+        app:search_text_color="#333"
+        app:searchable="true"
+        app:selected_item_background_color="#F3F3F3"
+        app:selected_item_text_color="#222"
+        app:selected_item_text_size="16sp"
+        app:shadow="true"
+        app:text_color="#333"
+        app:text_size="16sp" />
+
+</LinearLayout>
