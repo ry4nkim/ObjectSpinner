@@ -1,7 +1,8 @@
-package kr.ry4nkim.objectspinner_example;
+package kr.ry4nkim.objectspinner_example.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import kr.ry4nkim.objectspinner.ObjectSpinner;
+import kr.ry4nkim.objectspinner_example.R;
 import kr.ry4nkim.objectspinner_example.model.Goods;
 
 import android.os.Bundle;
@@ -23,20 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         mObjectSpinner = findViewById(R.id.spinner);
 
-        mObjectSpinner.setOnItemSelectedListener(new ObjectSpinner.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(ObjectSpinner view, int position, Object item) {
-                Log.i(TAG, "view : " + view);
-                Log.i(TAG, "position : " + position);
-                Log.i(TAG, "item : " + item);
-            }
+        mObjectSpinner.setOnItemSelectedListener((view, position, item) -> {
+            Log.i(TAG, "view : " + view);
+            Log.i(TAG, "position : " + position);
+            Log.i(TAG, "item : " + item);
         });
 
-        mObjectSpinner.setOnNothingSelectedListener(new ObjectSpinner.OnNothingSelectedListener() {
-            @Override
-            public void onNothingSelected(ObjectSpinner view) {
-                Log.i(TAG, "onNothingSelected");
-            }
+        mObjectSpinner.setOnNothingSelectedListener(view -> {
+            Log.i(TAG, "onNothingSelected");
         });
 
         List<Goods> itemList = new ArrayList<>();
