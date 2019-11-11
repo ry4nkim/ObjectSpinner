@@ -14,7 +14,7 @@ bintray {
     configurations = ['archives']
 
     pkg {
-        repo = 'Maven'
+        repo = 'maven'
         name = POM_ARTIFACT_ID
         desc = LIBRARY_DESCRIPTION
         websiteUrl = SITE_URL
