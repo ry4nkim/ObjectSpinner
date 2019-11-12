@@ -7,7 +7,7 @@ ObjectSpinner is an Android spinner library for object selection and supports se
 
 <br>
 <p align="center">
-  <img src="example.gif">
+  <img src="example.gif" width="350">
 </p>
 <br>
 
