@@ -8,6 +8,8 @@ import kr.ry4nkim.objectspinner_example.model.Goods;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,25 +27,22 @@ public class MainActivity extends AppCompatActivity {
         mObjectSpinner = findViewById(R.id.spinner);
 
         mObjectSpinner.setOnItemSelectedListener((view, position, item) -> {
-            Log.i(TAG, "view : " + view);
-            Log.i(TAG, "position : " + position);
-            Log.i(TAG, "item : " + item);
+            Snackbar.make(view, "Selected Object : " + item, Snackbar.LENGTH_SHORT).show();
         });
 
         mObjectSpinner.setOnNothingSelectedListener(view -> {
             Log.i(TAG, "onNothingSelected");
         });
 
-        List<Goods> itemList = new ArrayList<>();
+        List<Goods> goodsList = new ArrayList<>();
 
-        itemList.add(new Goods("gs0000", "Item 0", 0));
-        itemList.add(new Goods("gs0001", "Item 1", 1000));
-        itemList.add(new Goods("gs0002", "Item 2", 2000));
-        itemList.add(new Goods("gs0003", "Item 3", 3000));
-        itemList.add(new Goods("gs0004", "Item 4", 4000));
-        itemList.add(new Goods("gs0005", "Item 5", 5000));
-        itemList.add(new Goods("gs0006", "Item 6", 6000));
+        goodsList.add(new Goods("gs0001", "Item 1", 1000));
+        goodsList.add(new Goods("gs0002", "Item 2", 2000));
+        goodsList.add(new Goods("gs0003", "Item 3", 3000));
+        goodsList.add(new Goods("gs0004", "Item 4", 4000));
+        goodsList.add(new Goods("gs0005", "Item 5", 5000));
+        goodsList.add(new Goods("gs0006", "Item 6", 6000));
 
-        mObjectSpinner.setItemList(itemList);
+        mObjectSpinner.setItemList(goodsList);
     }
 }

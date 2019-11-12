@@ -12,6 +12,7 @@
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         app:arrow_color="#333"
         app:background_color="#FFF"
         app:hint="Select Item"
