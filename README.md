@@ -1,12 +1,15 @@
 [![API](https://img.shields.io/badge/API-19%2B-blue.svg?style=flat)](https://developer.android.com/reference/android/os/Build.VERSION_CODES#KITKAT) [![LICENSE](https://img.shields.io/:License-Apache%202.0-blue.svg)](LICENSE)
+
 Object Spinner (Searchable)
 ---
 
 ObjectSpinner is an Android spinner library for object selection and supports searching.
 
+<br>
 <p align="center">
-  <img src="https://github.com/ry4nkim/ObjectSpinner/raw/master/example.gif" width="300">
+  <img src="example.gif" width="300">
 </p>
+<br>
 
 Download [![Download](https://api.bintray.com/packages/kr-ry4nkim/maven/objectspinner/images/download.svg?version=1.0.0)](https://bintray.com/kr-ry4nkim/maven/objectspinner/1.0.0/link)
 --------
