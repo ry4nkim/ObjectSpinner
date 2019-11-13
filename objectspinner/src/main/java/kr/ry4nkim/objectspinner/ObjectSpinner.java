@@ -116,7 +116,7 @@ public class ObjectSpinner<T extends ObjectSpinner.Delegate> extends LinearLayou
 
     private void initView() {
         LayoutInflater li = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        View v = li.inflate(R.layout.object_spinner, this, false);
+        View v = li.inflate(R.layout.os_object_spinner, this, false);
         addView(v);
 
         // Init Spinner Layout
@@ -140,7 +140,7 @@ public class ObjectSpinner<T extends ObjectSpinner.Delegate> extends LinearLayou
         // Init Popup Window
         mPopupWindow = new PopupWindow(getContext());
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupLayout = layoutInflater.inflate(R.layout.popup_window, null);
+        View popupLayout = layoutInflater.inflate(R.layout.os_popup_window, null);
         mPopupWindow.setContentView(popupLayout);
         mPopupWindow.setFocusable(true);
         mPopupWindow.setOutsideTouchable(true);
@@ -208,94 +208,94 @@ public class ObjectSpinner<T extends ObjectSpinner.Delegate> extends LinearLayou
     }
 
     private void getAttrs(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ObjectSpinner);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.os_ObjectSpinner);
         setTypeArray(typedArray);
     }
 
     private void getAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ObjectSpinner, defStyle, 0);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.os_ObjectSpinner, defStyle, 0);
         setTypeArray(typedArray);
     }
 
     private void setTypeArray(TypedArray typedArray) {
         // Set Spinner Layout Attrs
-        mPadding = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_padding, 0);
-        mPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_padding_left, Utils.convertDpToPixel(getContext(), 16));
-        mPaddingTop = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_padding_top, Utils.convertDpToPixel(getContext(), 8));
-        mPaddingRight = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_padding_right, Utils.convertDpToPixel(getContext(), 16));
-        mPaddingBottom = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_padding_bottom, Utils.convertDpToPixel(getContext(), 8));
+        mPadding = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_padding, 0);
+        mPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_padding_left, Utils.convertDpToPixel(getContext(), 16));
+        mPaddingTop = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_padding_top, Utils.convertDpToPixel(getContext(), 8));
+        mPaddingRight = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_padding_right, Utils.convertDpToPixel(getContext(), 16));
+        mPaddingBottom = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_padding_bottom, Utils.convertDpToPixel(getContext(), 8));
         if (mPadding > 0) mPadding = mPaddingLeft = mPaddingTop = mPaddingRight = mPaddingBottom;
         mSpinnerLayout.setPadding(mPaddingLeft, mPaddingTop, mPaddingRight, mPaddingBottom);
 
-        mTextSize = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_text_size, Utils.convertDpToPixel(getContext(), 16));
+        mTextSize = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_text_size, Utils.convertDpToPixel(getContext(), 16));
         if (mTextSize > 0)
             mSelectedItemTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, Utils.convertPixelToDp(getContext(), mTextSize));
 
-        mTextColor = typedArray.getColor(R.styleable.ObjectSpinner_text_color, Color.rgb(51, 51, 51));
+        mTextColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_text_color, Color.rgb(51, 51, 51));
         mSelectedItemTextView.setTextColor(mTextColor);
 
-        mBackgroundColor = typedArray.getColor(R.styleable.ObjectSpinner_background_color, Color.rgb(255, 255, 255));
+        mBackgroundColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_background_color, Color.rgb(255, 255, 255));
         mSpinnerLayout.setBackgroundColor(mBackgroundColor);
 
-        mHint = typedArray.getString(R.styleable.ObjectSpinner_hint);
+        mHint = typedArray.getString(R.styleable.os_ObjectSpinner_os_hint);
         mSelectedItemTextView.setHint(mHint);
 
-        mHintColor = typedArray.getColor(R.styleable.ObjectSpinner_hint_color, Color.rgb(153, 153, 153));
+        mHintColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_hint_color, Color.rgb(153, 153, 153));
         mSelectedItemTextView.setHintTextColor(mHintColor);
 
-        mArrowColor = typedArray.getColor(R.styleable.ObjectSpinner_arrow_color, Color.rgb(51, 51, 51));
+        mArrowColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_arrow_color, Color.rgb(51, 51, 51));
         mArrowIcon.setColorFilter(mArrowColor);
 
-        mShadow = typedArray.getBoolean(R.styleable.ObjectSpinner_shadow, true);
+        mShadow = typedArray.getBoolean(R.styleable.os_ObjectSpinner_os_shadow, true);
         if (mShadow) {
-            mRootLayout.setBackground(getContext().getResources().getDrawable(R.drawable.spinner_bg));
-            mPopupWindow.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.popup_bg));
+            mRootLayout.setBackground(getContext().getResources().getDrawable(R.drawable.os_pinner_bg));
+            mPopupWindow.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.os_popup_bg));
         }
 
         // Set Spinner List Layout Attrs
-        mListMaxHeight = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_list_max_height, 0);
+        mListMaxHeight = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_list_max_height, 0);
         mRecyclerView.setMaxHeight(mListMaxHeight > 0 ? mListMaxHeight : Utils.convertDpToPixel(getContext(), 160));
 
-        mListEmptyText = typedArray.getString(R.styleable.ObjectSpinner_list_empty_text);
+        mListEmptyText = typedArray.getString(R.styleable.os_ObjectSpinner_os_list_empty_text);
         mListEmptyTextView.setText(mListEmptyText);
 
         // Set Spinner Item Layout Attrs
-        mItemPadding = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_padding, 0);
-        mItemPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_padding_left, Utils.convertDpToPixel(getContext(), 16));
-        mItemPaddingTop = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_padding_top, Utils.convertDpToPixel(getContext(), 8));
-        mItemPaddingRight = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_padding_right, Utils.convertDpToPixel(getContext(), 16));
-        mItemPaddingBottom = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_padding_bottom, Utils.convertDpToPixel(getContext(), 8));
+        mItemPadding = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_padding, 0);
+        mItemPaddingLeft = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_padding_left, Utils.convertDpToPixel(getContext(), 16));
+        mItemPaddingTop = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_padding_top, Utils.convertDpToPixel(getContext(), 8));
+        mItemPaddingRight = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_padding_right, Utils.convertDpToPixel(getContext(), 16));
+        mItemPaddingBottom = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_padding_bottom, Utils.convertDpToPixel(getContext(), 8));
         if (mItemPadding > 0)
             mItemPadding = mItemPaddingLeft = mItemPaddingTop = mItemPaddingRight = mItemPaddingBottom;
         mAdapter.setItemPadding(mItemPaddingLeft, mItemPaddingTop, mItemPaddingRight, mItemPaddingBottom);
         mListEmptyTextView.setPadding(mItemPaddingLeft, mItemPaddingTop + Utils.convertDpToPixel(getContext(), 1), mItemPaddingRight, mItemPaddingBottom + Utils.convertDpToPixel(getContext(), 1));
 
-        mItemTextSize = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_item_text_size, Utils.convertDpToPixel(getContext(), 16));
+        mItemTextSize = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_item_text_size, Utils.convertDpToPixel(getContext(), 16));
         if (mItemTextSize > 0) {
             mAdapter.setItemTextSize(mItemTextSize);
             mListEmptyTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, Utils.convertPixelToDp(getContext(), mItemTextSize) - 2);
         }
 
-        mItemTextColor = typedArray.getColor(R.styleable.ObjectSpinner_item_text_color, Color.rgb(51, 51, 51));
+        mItemTextColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_item_text_color, Color.rgb(51, 51, 51));
         mAdapter.setItemTextColor(mItemTextColor);
 
-        mItemBackgroundColor = typedArray.getColor(R.styleable.ObjectSpinner_item_background_color, Color.rgb(255, 255, 255));
+        mItemBackgroundColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_item_background_color, Color.rgb(255, 255, 255));
         mSearchLayout.setBackgroundColor(mItemBackgroundColor);
         mAdapter.setItemBackgroundColor(mItemBackgroundColor);
 
         // Set Spinner Selected Item Layout Attrs
-        mSelectedItemTextSize = typedArray.getDimensionPixelSize(R.styleable.ObjectSpinner_selected_item_text_size, mItemTextSize);
+        mSelectedItemTextSize = typedArray.getDimensionPixelSize(R.styleable.os_ObjectSpinner_os_selected_item_text_size, mItemTextSize);
         if (mSelectedItemTextSize > 0)
             mAdapter.setSelectedItemTextSize(mSelectedItemTextSize);
 
-        mSelectedItemTextColor = typedArray.getColor(R.styleable.ObjectSpinner_selected_item_text_color, Color.rgb(24, 24, 24));
+        mSelectedItemTextColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_selected_item_text_color, Color.rgb(24, 24, 24));
         mAdapter.setSelectedItemTextColor(mSelectedItemTextColor);
 
-        mSelectedItemBackgroundColor = typedArray.getColor(R.styleable.ObjectSpinner_selected_item_background_color, Color.rgb(243, 243, 243));
+        mSelectedItemBackgroundColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_selected_item_background_color, Color.rgb(243, 243, 243));
         mAdapter.setSelectedItemBackgroundColor(mSelectedItemBackgroundColor);
 
         // Set Spinner Search Layout Attrs
-        mSearchable = typedArray.getBoolean(R.styleable.ObjectSpinner_searchable, false);
+        mSearchable = typedArray.getBoolean(R.styleable.os_ObjectSpinner_os_searchable, false);
         if (mSearchable) {
             mSearchLayout.setVisibility(View.VISIBLE);
             mSearchText.addTextChangedListener(mSearchTextWatcher);
@@ -314,13 +314,13 @@ public class ObjectSpinner<T extends ObjectSpinner.Delegate> extends LinearLayou
             mAdapter.setOnFilterFinishedListener(null);
         }
 
-        mSearchTextColor = typedArray.getColor(R.styleable.ObjectSpinner_search_text_color, Color.rgb(51, 51, 51));
+        mSearchTextColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_search_text_color, Color.rgb(51, 51, 51));
         mSearchText.setTextColor(mSearchTextColor);
 
-        mSearchIconColor = typedArray.getColor(R.styleable.ObjectSpinner_search_icon_color, Color.rgb(192, 192, 192));
+        mSearchIconColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_search_icon_color, Color.rgb(192, 192, 192));
         mSearchIcon.setColorFilter(mSearchIconColor);
 
-        mSearchBackgroundColor = typedArray.getColor(R.styleable.ObjectSpinner_search_background_color, Color.rgb(243, 243, 243));
+        mSearchBackgroundColor = typedArray.getColor(R.styleable.os_ObjectSpinner_os_search_background_color, Color.rgb(243, 243, 243));
         Drawable bgDrawable = DrawableCompat.wrap(mSearchText.getBackground());
         DrawableCompat.setTint(bgDrawable, mSearchBackgroundColor);
         mSearchText.setBackground(bgDrawable);
@@ -454,8 +454,8 @@ public class ObjectSpinner<T extends ObjectSpinner.Delegate> extends LinearLayou
             }
         });
         if (mShadow) {
-            mRootLayout.setBackground(getContext().getResources().getDrawable(R.drawable.spinner_bg));
-            mPopupWindow.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.popup_bg));
+            mRootLayout.setBackground(getContext().getResources().getDrawable(R.drawable.os_pinner_bg));
+            mPopupWindow.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.os_popup_bg));
         } else {
             mRootLayout.setPadding(0, 0, 0, 0);
             mRootLayout.setBackground(null);

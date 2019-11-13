@@ -11,20 +11,20 @@ ObjectSpinner is an Android spinner library for object selection and supports se
 </p>
 <br>
 
-Download [![Download](https://api.bintray.com/packages/kr-ry4nkim/maven/objectspinner/images/download.svg?version=1.0.0)](https://bintray.com/kr-ry4nkim/maven/objectspinner/1.0.0/link)
+Download [![Download](https://api.bintray.com/packages/kr-ry4nkim/maven/objectspinner/images/download.svg?version=1.0.1)](https://bintray.com/kr-ry4nkim/maven/objectspinner/1.0.1/link)
 --------
 
-Download [the latest AAR](https://dl.bintray.com/kr-ry4nkim/maven/kr/ry4nkim/objectspinner/1.0.0/objectspinner-1.0.0.aar) or grab via Gradle:
+Download [the latest AAR](https://dl.bintray.com/kr-ry4nkim/maven/kr/ry4nkim/objectspinner/1.0.1/objectspinner-1.0.1.aar) or grab via Gradle:
 
 ```groovy
-implementation 'kr.ry4nkim.ObjectSpinner:1.0.0'
+implementation 'kr.ry4nkim:objectspinner:1.0.1'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>kr.ry4nkim</groupId>
   <artifactId>objectspinner</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -35,13 +35,13 @@ Usage
 1. Add the ObjectSpinner to your layout XML:
 
 ```xml
-<kr.ry4nkim.ObjectSpinner
+<kr.ry4nkim.objectspinner.ObjectSpinner
     android:id="@+id/spinner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
 ```
 
-2. Implement ObjectSpinner.Delegate on your object to override the getSpinnerDelegate() method to return the spinner's delegate:
+2. Implement `ObjectSpinner.Delegate` on your object to override the `getSpinnerDelegate()` method to return the spinner's delegate:
 
 ```java
 public class YourObject implements ObjectSpinner.Delegate {
@@ -57,15 +57,17 @@ public class YourObject implements ObjectSpinner.Delegate {
 }
 ```
 
-3. Add item list to the spinner and listen for item select:
+3. Add item list to the spinner and listen for select:
 
 ```java
 ObjectSpinner<YourObject> mObjectSpinner = findViewById(R.id.spinner);
 
 List<YourObject> itemList = new ArrayList<>();
+
 itemList.add(new YourObject("obj0001", "Object 1"));
 itemList.add(new YourObject("obj0002", "Object 2"));
 itemList.add(new YourObject("obj0003", "Object 3"));
+
 mObjectSpinner.setItemList(itemList);
 
 mObjectSpinner.setOnItemSelectedListener((view, position, item) -> {
@@ -79,37 +81,37 @@ mObjectSpinner.setOnNothingSelectedListener(view -> {
 
 You can add attributes to customize the view. Available attributes:
 
-| name                           | type      | info                                           |
-|--------------------------------|-----------|------------------------------------------------|
-| padding                        | dimension | set the padding of the spinner                 |
-| padding_left                   | dimension | set the left padding of the spinner            |
-| padding_top                    | dimension | set the top padding of the spinner             |
-| padding_right                  | dimension | set the right padding of the spinner           |
-| padding_bottom                 | dimension | set the bottom padding of the spinner          |
-| text_size                      | dimension | set the text size of the spinner               |
-| text_color                     | color     | set the text color of the spinner              |
-| background_color               | color     | set the background color of the spinner        |
-| hint                           | string    | set the hint of the spinner                    |
-| hint_color                     | color     | set the hint color of the spinner              |
-| arrow_color                    | color     | set the arrow color of the spinner             |
-| shadow                         | boolean   | set to false to hide the shadow of the spinner |
-| list_max_height                | dimension | set the max height of the spinner list         |
-| list_empty_text                | string    | set the empty list text of the spinner list    |
-| item_padding                   | dimension | set the padding of the spinner item            |
-| item_padding_left              | dimension | set the left padding of the spinner item       |
-| item_padding_top               | dimension | set the top padding of the spinner item        |
-| item_padding_right             | dimension | set the right padding of the spinner item      |
-| item_padding_bottom            | dimension | set the bottom padding of the spinner item     |
-| item_text_size                 | dimension | set the text size of the spinner item          |
-| item_text_color                | color     | set the text color of the spinner item         |
-| item_background_color          | color     | set the background color of the spinner item   |
-| selected_item_text_size        | dimension | set the padding of the spinner selected item   |
-| selected_item_text_color       | color     | set the padding of the spinner selected item   |
-| selected_item_background_color | color     | set the padding of the spinner selected item   |
-| search_text_color              | color     | set the search text color of the spinner       |
-| search_icon_color              | color     | set the search icon color of the spinner       |
-| search_background_color        | color     | set the search background color of the spinner |
-| searchable                     | boolean   | set to false to hide the search of the spinner |
+| name                              | type      | info                                           |
+|-----------------------------------|-----------|------------------------------------------------|
+| os_padding                        | dimension | set the padding of the spinner                 |
+| os_padding_left                   | dimension | set the left padding of the spinner            |
+| os_padding_top                    | dimension | set the top padding of the spinner             |
+| os_padding_right                  | dimension | set the right padding of the spinner           |
+| os_padding_bottom                 | dimension | set the bottom padding of the spinner          |
+| os_text_size                      | dimension | set the text size of the spinner               |
+| os_text_color                     | color     | set the text color of the spinner              |
+| os_background_color               | color     | set the background color of the spinner        |
+| os_hint                           | string    | set the hint of the spinner                    |
+| os_hint_color                     | color     | set the hint color of the spinner              |
+| os_arrow_color                    | color     | set the arrow color of the spinner             |
+| os_shadow                         | boolean   | set to false to hide the shadow of the spinner |
+| os_list_max_height                | dimension | set the max height of the spinner list         |
+| os_list_empty_text                | string    | set the empty list text of the spinner list    |
+| os_item_padding                   | dimension | set the padding of the spinner item            |
+| os_item_padding_left              | dimension | set the left padding of the spinner item       |
+| os_item_padding_top               | dimension | set the top padding of the spinner item        |
+| os_item_padding_right             | dimension | set the right padding of the spinner item      |
+| os_item_padding_bottom            | dimension | set the bottom padding of the spinner item     |
+| os_item_text_size                 | dimension | set the text size of the spinner item          |
+| os_item_text_color                | color     | set the text color of the spinner item         |
+| os_item_background_color          | color     | set the background color of the spinner item   |
+| os_selected_item_text_size        | dimension | set the padding of the spinner selected item   |
+| os_selected_item_text_color       | color     | set the padding of the spinner selected item   |
+| os_selected_item_background_color | color     | set the padding of the spinner selected item   |
+| os_search_text_color              | color     | set the search text color of the spinner       |
+| os_search_icon_color              | color     | set the search icon color of the spinner       |
+| os_search_background_color        | color     | set the search background color of the spinner |
+| os_searchable                     | boolean   | set to false to hide the search of the spinner |
 
 Acknowledgements
 ----------------

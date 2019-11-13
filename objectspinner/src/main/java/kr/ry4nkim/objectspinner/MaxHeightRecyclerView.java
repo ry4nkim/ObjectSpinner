@@ -25,8 +25,8 @@ public class MaxHeightRecyclerView extends RecyclerView {
     }
 
     private void initialize(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MaxHeightRecyclerView);
-        mMaxHeight = typedArray.getLayoutDimension(R.styleable.MaxHeightRecyclerView_max_height, mMaxHeight);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.os_MaxHeightRecyclerView);
+        mMaxHeight = typedArray.getLayoutDimension(R.styleable.os_MaxHeightRecyclerView_os_max_height, mMaxHeight);
         typedArray.recycle();
     }
 

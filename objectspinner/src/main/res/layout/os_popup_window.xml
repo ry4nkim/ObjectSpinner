@@ -16,7 +16,7 @@
             android:id="@+id/et_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/search_bg"
+            android:background="@drawable/os_search_bg"
             android:inputType="text"
             android:paddingLeft="7dp"
             android:paddingTop="7dp"
@@ -31,7 +31,7 @@
             android:layout_height="20dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginRight="7dp"
-            app:srcCompat="@drawable/ic_search" />
+            app:srcCompat="@drawable/os_ic_search" />
 
     </FrameLayout>
 
@@ -49,6 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        app:max_height="300dp" />
+        app:os_max_height="300dp" />
 
 </LinearLayout>
